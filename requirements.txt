@@ -1,6 +1,7 @@
 dramatiq[redis, watch]
 fastapi
 pydantic[dotenv]
+psycopg2
 scikit-learn
 sqlmodel
 uvicorn[standard]
