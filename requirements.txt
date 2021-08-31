@@ -1,0 +1,9 @@
+dramatiq[redis, watch]
+fastapi
+pydantic[dotenv]
+scikit-learn
+sqlmodel
+uvicorn[standard]
+
+black
+mypy
