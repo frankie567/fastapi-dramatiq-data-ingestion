@@ -4,6 +4,7 @@ from typing import List, Optional, Tuple, cast
 import joblib
 from sklearn.pipeline import Pipeline
 
+
 class CategoryPrediction:
     model: Optional[Pipeline] = None
     targets: Optional[List[str]] = None
@@ -18,7 +19,7 @@ class CategoryPrediction:
 
     def predict(self, input: str) -> str:
         """Runs a prediction"""
-        if not self.model or not self.targets:
+        if self.model is None or self.targets is None:
             self.load_model()
         model = cast(Pipeline, self.model)
         targets = cast(List[str], self.targets)

@@ -11,8 +11,8 @@ class Settings(BaseSettings):
     @validator("database_url")
     def replace_postgres_scheme(cls, url: str) -> str:
         """
-            Ensures scheme is compatible with newest version of SQLAlchemy.
-            Ref: https://help.heroku.com/ZKNTJQSK/why-is-sqlalchemy-1-4-x-not-connecting-to-heroku-postgres
+        Ensures scheme is compatible with newest version of SQLAlchemy.
+        Ref: https://help.heroku.com/ZKNTJQSK/why-is-sqlalchemy-1-4-x-not-connecting-to-heroku-postgres
         """
         if url.startswith("postgres://"):
             url = url.replace("postgres://", "postgresql://", 1)
