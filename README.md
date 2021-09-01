@@ -1,6 +1,6 @@
 # Create and deploy a reliable data ingestion service with FastAPI, SQLModel and Dramatiq
 
-This is the source code for the data ingestion service explained in [this blog plost](https://www.francoisvoron.com/blog/create-deploy-reliable-data-ingestion-service-fastapi-sqlmodel-dramatiq).
+This is the source code for the data ingestion service explained in [this blog post](https://www.francoisvoron.com/blog/create-deploy-reliable-data-ingestion-service-fastapi-sqlmodel-dramatiq).
 
 ## [Read the blog post](https://www.francoisvoron.com/blog/create-deploy-reliable-data-ingestion-service-fastapi-sqlmodel-dramatiq)
 
