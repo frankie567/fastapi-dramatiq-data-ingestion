@@ -1,2 +1,2 @@
 web: gunicorn -k uvicorn.workers.UvicornWorker app.api:app
-worker: dramatiq app.worker
+worker: dramatiq -p 4 -t 4 app.worker
