@@ -4,6 +4,7 @@ from pydantic import BaseSettings, RedisDsn, validator
 class Settings(BaseSettings):
     database_url: str = "sqlite://database.db"
     redis_url: RedisDsn
+    loader_io_verification_token: str = "DUMMY_TOKEN"
 
     class Config:
         env_file = ".env"
