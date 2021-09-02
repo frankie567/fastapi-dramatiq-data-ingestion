@@ -1,6 +1,5 @@
 dramatiq[redis, watch]
 fastapi
-gunicorn
 pydantic[dotenv]
 psycopg2
 scikit-learn
