@@ -9,7 +9,7 @@ from app.db import engine
 from app.models import Document, DocumentInput
 from app.settings import settings
 
-redis_broker = RedisBroker(url=settings.redis_url)
+redis_broker = RedisBroker(url=settings.redis_url, ssl_cert_reqs=None)
 dramatiq.set_broker(redis_broker)
 
 
