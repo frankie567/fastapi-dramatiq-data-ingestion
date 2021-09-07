@@ -17,7 +17,8 @@ redis_broker = RedisBroker(
     port=redis_parameters.port,
     username=redis_parameters.username,
     password=redis_parameters.password,
-    ssl=True,
+    # Heroku Redis with TLS use self-signed certs, so we need to tinker a bit
+    ssl=redis_parameters.scheme == "rediss",
     ssl_cert_reqs=None,
 )
 dramatiq.set_broker(redis_broker)
