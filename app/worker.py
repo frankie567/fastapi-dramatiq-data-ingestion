@@ -1,3 +1,5 @@
+from urllib.parse import urlparse
+
 from app.predict import CategoryPrediction
 from datetime import datetime
 
@@ -9,7 +11,15 @@ from app.db import engine
 from app.models import Document, DocumentInput
 from app.settings import settings
 
-redis_broker = RedisBroker(url=settings.redis_url, ssl_cert_reqs=None)
+redis_parameters = urlparse(settings.redis_url)
+redis_broker = RedisBroker(
+    host=redis_parameters.hostname,
+    port=redis_parameters.port,
+    username=redis_parameters.username,
+    password=redis_parameters.password,
+    ssl=True,
+    ssl_cert_reqs=None,
+)
 dramatiq.set_broker(redis_broker)
 
 
