@@ -1,6 +1,4 @@
 from urllib.parse import urlparse
-
-from app.predict import CategoryPrediction
 from datetime import datetime
 
 import dramatiq
@@ -9,6 +7,7 @@ from sqlmodel import Session
 
 from app.db import engine
 from app.models import Document, DocumentInput
+from app.predict import CategoryPrediction
 from app.settings import settings
 
 redis_parameters = urlparse(settings.redis_url)
